@@ -1,0 +1,58 @@
+﻿@model WebApiReagentes.TB_EMPRESTIMO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_EMPRESTIMO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_USUARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_REAGENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_REAGENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QT_PESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QT_PESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DT_EMPRESTIMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DT_EMPRESTIMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_EMPRESTIMO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

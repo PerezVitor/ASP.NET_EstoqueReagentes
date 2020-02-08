@@ -1,0 +1,58 @@
+﻿@model WebApiReagentes.TB_USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_USUARIO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_SENHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_SENHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_TIPO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_TIPO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_USUARIO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

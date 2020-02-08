@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApiReagentes.TB_EMPRESTIMO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_REAGENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QT_PESO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DT_EMPRESTIMO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_USUARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_REAGENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QT_PESO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DT_EMPRESTIMO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_EMPRESTIMO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_EMPRESTIMO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_EMPRESTIMO })
+        </td>
+    </tr>
+}
+
+</table>

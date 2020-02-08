@@ -1,0 +1,64 @@
+﻿@model WebApiReagentes.TB_EMPRESTIMO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TB_EMPRESTIMO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_USUARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_REAGENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_REAGENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QT_PESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QT_PESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DT_EMPRESTIMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DT_EMPRESTIMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_STATUS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

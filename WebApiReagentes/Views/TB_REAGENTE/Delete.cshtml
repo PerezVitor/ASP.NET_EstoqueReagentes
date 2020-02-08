@@ -1,0 +1,80 @@
+﻿@model WebApiReagentes.TB_REAGENTE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TB_REAGENTE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NM_DESCRICAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NM_DESCRICAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CD_INTERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CD_INTERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NR_CAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NR_CAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QT_PESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QT_PESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UN_MEDIDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UN_MEDIDA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_OBS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DS_STATUS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

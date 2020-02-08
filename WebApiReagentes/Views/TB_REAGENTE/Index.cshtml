@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApiReagentes.TB_REAGENTE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NM_DESCRICAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CD_INTERNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NR_CAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QT_PESO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UN_MEDIDA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DS_OBS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DS_STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NM_DESCRICAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CD_INTERNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NR_CAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QT_PESO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UN_MEDIDA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_OBS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_REAGENTE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_REAGENTE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_REAGENTE })
+        </td>
+    </tr>
+}
+
+</table>

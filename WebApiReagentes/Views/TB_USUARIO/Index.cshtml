@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApiReagentes.TB_USUARIO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            USUÁRIO
+        </th>
+        <th>
+            EMAIL
+        </th>
+        <th>
+          Tipo
+        </th>
+        <th>
+            @Html.ActionLink("INSERIR NOVO USUÁRIO", "Create")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_NOME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DS_TIPO)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID_USUARIO }, htmlAttributes: new { @class = "btn btn-secundary" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ID_USUARIO }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ID_USUARIO })
+        </td>
+    </tr>
+}
+
+</table>
