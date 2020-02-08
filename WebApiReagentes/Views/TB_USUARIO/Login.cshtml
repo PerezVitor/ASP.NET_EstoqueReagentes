@@ -5,6 +5,7 @@
 }
 
 <h2>Login</h2>
+<hr />
 @using (Html.BeginForm())
 {
     //cria a tag do formulário
@@ -18,23 +19,30 @@
     }
     <table>
         <tr>
-            <td>@Html.LabelFor(a => a.DS_NOME)</td>
-            <td>@Html.TextBoxFor(a => a.DS_NOME)</td>
+            <td><h4>Nome</h4></td>
+            <td>@Html.TextBoxFor(a => a.DS_NOME, null, new { @class = "form-control" })</td>
             <td>@Html.ValidationMessageFor(a => a.DS_NOME)</td>
         </tr>
         <tr>
-            <td> @Html.LabelFor(a => a.DS_SENHA)</td>
-            <td> @Html.PasswordFor(a => a.DS_SENHA) </td>
+            <td><h4>Senha</h4></td>
+            <td> @Html.PasswordFor(a => a.DS_SENHA, new { @class = "form-control" }) </td>
             <td> @Html.ValidationMessageFor(a => a.DS_SENHA) </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login" class="btn btn-default" />
             </td>
             <td></td>
         </tr>
     </table>
+}
+
+@if (ViewBag.Erro != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Erro
+    </div>
 }
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")

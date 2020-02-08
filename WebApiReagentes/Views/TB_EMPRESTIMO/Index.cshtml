@@ -1,57 +1,50 @@
 ﻿@model IEnumerable<WebApiReagentes.TB_EMPRESTIMO>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Emprestimo de Reagentes";
 }
 
-<h2>Index</h2>
+<h2>Emprestimo de Reagentes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID_USUARIO)
+            Identificador do Usuários
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ID_REAGENTE)
+            Identificador do Reagente
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.QT_PESO)
+            Quantidade/Peso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DT_EMPRESTIMO)
+            Data do Emprestimo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DS_STATUS)
+            @Html.ActionLink("Novo Empréstimo", "Create", null, new { @class = "btn btn-success" })
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_USUARIO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_REAGENTE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QT_PESO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DT_EMPRESTIMO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DS_STATUS)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_EMPRESTIMO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_EMPRESTIMO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_EMPRESTIMO })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_USUARIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_REAGENTE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QT_PESO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DT_EMPRESTIMO)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_EMPRESTIMO }, new { @class = "btn btn-primary"}) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_EMPRESTIMO }, new { @class = "btn btn-danger"})
+            </td>
+        </tr>
+    }
 
 </table>

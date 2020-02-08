@@ -4,64 +4,50 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Estoque de Reagentes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
+<table class="table table-striped table-bordered table-hover">
+    <tr class="thead-dark">
         <th>
-            @Html.DisplayNameFor(model => model.NM_DESCRICAO)
+           Descrição
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CD_INTERNO)
+            Código Interno
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NR_CAS)
+            Nº CAS
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.QT_PESO)
+            Quantidade Peso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UN_MEDIDA)
+            Observações
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DS_OBS)
+            @Html.ActionLink("Novo Reagente", "Create", null, new { @class = "btn btn-success btn-large" })
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DS_STATUS)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td id="td-descricao">
             @Html.DisplayFor(modelItem => item.NM_DESCRICAO)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CD_INTERNO)
         </td>
-        <td>
+        <td id="td-nrcas">
             @Html.DisplayFor(modelItem => item.NR_CAS)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.QT_PESO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UN_MEDIDA)
+            @Html.DisplayFor(modelItem => item.QT_PESO) @Html.DisplayFor(modelItem => item.UN_MEDIDA)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DS_OBS)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DS_STATUS)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_REAGENTE }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_REAGENTE }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_REAGENTE })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_REAGENTE }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_REAGENTE }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

@@ -184,18 +184,22 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    margin: 0;
+    padding: 0;
 }
 td,
 th {
-  padding: 0;
+    padding: 0;
 }
+
+#td-descricao, #td-nrcas {
+    white-space: nowrap;
+    word-wrap: hyphenate;
+}
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
-  *,
-  *:before,
-  *:after {
+    *, *:before, *:after {
     color: #000 !important;
     text-shadow: none !important;
     background: transparent !important;
@@ -6830,5 +6834,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+#basic-btn tr td {
+    white-space: pre-wrap;
 }
 /*# sourceMappingURL=bootstrap.css.map */

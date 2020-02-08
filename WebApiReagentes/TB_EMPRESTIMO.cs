@@ -15,10 +15,10 @@ namespace WebApiReagentes
 
         public int ID_REAGENTE { get; set; }
 
-        [Column(TypeName = "numeric")]
+        //[Column(TypeName = "numeric")]
         public decimal QT_PESO { get; set; }
 
-        [Column(TypeName = "date")]
+        //[Column(TypeName = "date")]
         public DateTime DT_EMPRESTIMO { get; set; }
 
         [Required]

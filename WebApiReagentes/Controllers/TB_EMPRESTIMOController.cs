@@ -53,8 +53,10 @@ namespace WebApiReagentes.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_EMPRESTIMO,ID_USUARIO,ID_REAGENTE,QT_PESO,DT_EMPRESTIMO,DS_STATUS")] TB_EMPRESTIMO tB_EMPRESTIMO)
+        public ActionResult Create([Bind(Include = "ID_EMPRESTIMO,ID_USUARIO,ID_REAGENTE,QT_PESO")] TB_EMPRESTIMO tB_EMPRESTIMO)
         {
+            tB_EMPRESTIMO.DS_STATUS = "A";
+            tB_EMPRESTIMO.DT_EMPRESTIMO = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.TB_EMPRESTIMO.Add(tB_EMPRESTIMO);
@@ -85,7 +87,7 @@ namespace WebApiReagentes.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_EMPRESTIMO,ID_USUARIO,ID_REAGENTE,QT_PESO,DT_EMPRESTIMO,DS_STATUS")] TB_EMPRESTIMO tB_EMPRESTIMO)
+        public ActionResult Edit([Bind(Include = "ID_EMPRESTIMO,ID_USUARIO,ID_REAGENTE,QT_PESO,DT_EMPRESTIMO")] TB_EMPRESTIMO tB_EMPRESTIMO)
         {
             if (ModelState.IsValid)
             {

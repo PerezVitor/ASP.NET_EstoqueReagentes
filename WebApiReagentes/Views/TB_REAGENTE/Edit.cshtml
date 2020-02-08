@@ -4,29 +4,27 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
+<h2>Edição de Reagente</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TB_REAGENTE</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID_REAGENTE)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NM_DESCRICAO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NM_DESCRICAO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NM_DESCRICAO, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Descrição</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NM_DESCRICAO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NM_DESCRICAO, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CD_INTERNO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Código Interno</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CD_INTERNO, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.CD_INTERNO, "", new { @class = "text-danger" })
@@ -34,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NR_CAS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Nº CAS</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NR_CAS, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NR_CAS, "", new { @class = "text-danger" })
@@ -42,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.QT_PESO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Quantidade/Peso</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.QT_PESO, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.QT_PESO, "", new { @class = "text-danger" })
@@ -50,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UN_MEDIDA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Unidade de Medida</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UN_MEDIDA, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UN_MEDIDA, "", new { @class = "text-danger" })
@@ -58,31 +56,24 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DS_OBS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Observações</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DS_OBS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.DS_OBS, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DS_OBS, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DS_STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DS_STATUS, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DS_STATUS, "", new { @class = "text-danger" })
-            </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success btn-lg" />
             </div>
         </div>
-    </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-primary"})
 </div>
 
 @section Scripts {

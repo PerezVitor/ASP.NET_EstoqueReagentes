@@ -24,17 +24,13 @@ namespace WebApiReagentes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(TB_USUARIO usuario)
         {
-            // esta action trata o post (login)
-            //if (ModelState.IsValid) //verifica se é válido
-            //{
-                var validar = db.TB_USUARIO.Where(a => a.DS_NOME.Equals(usuario.DS_NOME) && a.DS_SENHA.Equals(usuario.DS_SENHA)).FirstOrDefault();
-                if (validar != null)
-                {
-                    Session["usuarioLogadoID"] = validar.ID_USUARIO.ToString();
-                    Session["nomeUsuarioLogado"] = validar.DS_NOME.ToString();
-                    return RedirectToAction("Index");
-                }
-            //}
+            var validar = db.TB_USUARIO.Where(a => a.DS_NOME.Equals(usuario.DS_NOME) && a.DS_SENHA.Equals(usuario.DS_SENHA)).FirstOrDefault();
+            if (validar != null)
+            {
+                Session["usuarioLogadoID"] = validar.ID_USUARIO.ToString();
+                Session["nomeUsuarioLogado"] = validar.DS_NOME.ToString();
+                return RedirectToAction("Index");
+            }
             return View(usuario);
         }
 
@@ -51,12 +47,12 @@ namespace WebApiReagentes.Controllers
         {
             if (Session["usuarioLogadoID"] != null)
             {
-                return View(db.TB_USUARIO.ToList());
+                return View(db.TB_USUARIO.ToList().Where(u => u.DS_STATUS == "A"));
             }
             else
             {
                 return RedirectToAction("Login");
-            }            
+            }
         }
 
         // GET: TB_USUARIO/Details/5
@@ -85,16 +81,17 @@ namespace WebApiReagentes.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_USUARIO,DS_NOME,DS_SENHA,DS_EMAIL,DS_TIPO,DS_STATUS")] TB_USUARIO tB_USUARIO)
+        public ActionResult Create([Bind(Include = "ID_USUARIO,DS_NOME,DS_SENHA,DS_EMAIL,DS_TIPO")] TB_USUARIO usuario)
         {
+            usuario.DS_STATUS = "A";
             if (ModelState.IsValid)
             {
-                db.TB_USUARIO.Add(tB_USUARIO);
+                db.TB_USUARIO.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tB_USUARIO);
+            return View(usuario);
         }
 
         // GET: TB_USUARIO/Edit/5

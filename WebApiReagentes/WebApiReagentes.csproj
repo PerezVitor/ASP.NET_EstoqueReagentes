@@ -189,17 +189,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\TB_USUARIO\Create.cshtml" />
     <Content Include="Views\TB_USUARIO\Delete.cshtml" />
-    <Content Include="Views\TB_USUARIO\Details.cshtml" />
     <Content Include="Views\TB_USUARIO\Edit.cshtml" />
     <Content Include="Views\TB_USUARIO\Index.cshtml" />
     <Content Include="Views\TB_REAGENTE\Create.cshtml" />
     <Content Include="Views\TB_REAGENTE\Delete.cshtml" />
-    <Content Include="Views\TB_REAGENTE\Details.cshtml" />
     <Content Include="Views\TB_REAGENTE\Edit.cshtml" />
     <Content Include="Views\TB_REAGENTE\Index.cshtml" />
     <Content Include="Views\TB_EMPRESTIMO\Create.cshtml" />
     <Content Include="Views\TB_EMPRESTIMO\Delete.cshtml" />
-    <Content Include="Views\TB_EMPRESTIMO\Details.cshtml" />
     <Content Include="Views\TB_EMPRESTIMO\Edit.cshtml" />
     <Content Include="Views\TB_EMPRESTIMO\Index.cshtml" />
     <Content Include="Views\TB_USUARIO\Login.cshtml" />

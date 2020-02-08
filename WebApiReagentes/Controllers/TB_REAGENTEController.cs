@@ -85,8 +85,9 @@ namespace WebApiReagentes.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_REAGENTE,NM_DESCRICAO,CD_INTERNO,NR_CAS,QT_PESO,UN_MEDIDA,DS_OBS,DS_STATUS")] TB_REAGENTE tB_REAGENTE)
+        public ActionResult Edit([Bind(Include = "ID_REAGENTE,NM_DESCRICAO,CD_INTERNO,NR_CAS,QT_PESO,UN_MEDIDA,DS_OBS")] TB_REAGENTE tB_REAGENTE)
         {
+            tB_REAGENTE.DS_STATUS = "A";
             if (ModelState.IsValid)
             {
                 db.Entry(tB_REAGENTE).State = EntityState.Modified;

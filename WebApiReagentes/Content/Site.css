@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#basic-btn tr td {
+    white-space: pre-wrap;
+}
